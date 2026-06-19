@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبو يوسف - كعبيلا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الساوند اللي هيشتغل أول ما الموقع يفتح (أو مع أول تفاعل) -->
+    <audio id="welcome-audio" loop>
+        <source src="WhatsApp Audio 2026-06-20 at 2.11.22 AM.mpeg" type="audio/mpeg">
+        <!-- حط لينك الساوند بتاعك هنا مكان اللينك اللي فوق ده -->
+    </audio>
+
+    <!-- ساوند رقصة الراب (الحدث الثاني) -->
+    <audio id="rap-audio" loop>
+        <source src="WhatsApp Audio 2026-06-20 at 2.23.08 AM.mpeg" type="audio/mpeg">
+        <!-- حط لينك ساوند الراب هنا -->
+    </audio>
+
+    <!-- زرار بدء التجربة (لأن المتصفحات الحديثة بتمنع اشتغال الصوت أوتوماتيك بدون تفاعل) -->
+    <div id="start-overlay" class="overlay">
+        <button id="start-btn">اهلا بيك فى الجديد منو يا صاحبى ✘︵✘</button>
+    </div>
+
+    <main class="main-container">
+        
+        <!-- ================= الحدث الأول ================= -->
+        <section id="event-one" class="section event-one show">
+            <!-- اللوجو (علامة الاكتئاب التكشيرة) -->
+            <div class="depressed-logo"><span>✘︵✘</span></div>
+            
+            <!-- الجملة الفاجرة -->
+            <h1 class="greeting-text">كل سنة وأنت طيب يا كعبيلا</h1>
+            
+            <!-- صورة أبو يوسف في النص مع تأثيرات الـ CSS -->
+            <div class="image-wrapper">
+                <img id="abu-youssef-img" src="WhatsApp Image 2026-06-20 at 1.42.17 AM.jpeg" alt="أبو يوسف">
+                <!-- شيل اللينك اللي فوق وحط اسم صورتك هنا -->
+            </div>
+
+            <!-- زرار ينقلنا للحدث الثاني بحركة صايعة -->
+            <button id="next-event-btn" class="next-btn">يلا بينا عندنا عيد ميلاد 🔥</button>
+        </section>
+
+        <!-- ================= الحدث الثاني ================= -->
+        <section id="event-two" class="section event-two hidden">
+            <h2 class="rap-title">كل سنة و انت طيب يا نور عينى - ابيو عامل ليكو خرم كبير</h2>
+            
+<!-- شخصية الراب الفاجرة الجديدة -->
+<div class="rap-character-container">
+    <div class="rapper-body">
+        <!-- الكاب والرأس -->
+        <div class="rap-head">
+            <div class="cap"></div>
+        </div>
+        <!-- الجذع / التيشيرت -->
+        <div class="rap-torso">
+            <!-- اليد اليسرى بترميز حركة راب -->
+            <div class="rap-arm left"></div>
+            <!-- اليد اليمنى ماسكة المايك -->
+            <div class="rap-arm right">
+                <div class="mic"></div>
+            </div>
+        </div>
+        <!-- الرجلين والبنطلون واسع -->
+        <div class="rap-legs">
+            <div class="leg left-leg"></div>
+            <div class="leg right-leg"></div>
+        </div>
+    </div>
+    <div class="stage-shadow"></div>
+</div>
+
+            <button id="back-event-btn" class="back-btn">✘︵✘</button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

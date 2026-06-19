@@ -1,0 +1,485 @@
+/* ريسيت وتنسيق عام */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* شاشة البداية لتفعيل الصوت */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.overlay button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background: #66fcf1;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 20px #66fcf1;
+    transition: transform 0.2s;
+}
+
+.overlay button:hover {
+    transform: scale(1.1);
+}
+
+/* الكونتينر الرئيسي للموقع */
+.main-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section.hidden {
+    display: none;
+}
+
+/* ------------ الحدث الأول ------------ */
+
+/* لوجو الاكتئاب */
+.depressed-logo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #66fcf1;
+    text-shadow: 0 0 15px rgba(102, 252, 241, 0.6);
+    margin-bottom: 10px;
+    animation: pulse 2s infinite alternate;
+}
+
+.depressed-logo span {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* نص التهنئة */
+.greeting-text {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 10px #45f3ff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* صورة أبو يوسف المحمية داخل Wrapper */
+.image-wrapper {
+    position: relative;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, #66fcf1, #45f3ff);
+    box-shadow: 0 0 30px rgba(102, 252, 241, 0.4);
+    animation: float 4s ease-in-out infinite;
+    margin-bottom: 40px;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* أزرار التنقل */
+.next-btn, .back-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background: transparent;
+    border: 2px solid #66fcf1;
+    color: #66fcf1;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.next-btn:hover, .back-btn:hover {
+    background: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+/* ------------ الحدث الثاني (الراب) ------------ */
+.rap-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 10px #45f3ff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* هيكل شخصية الراب المصممة بـ HTML العناصر */
+.rap-character-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+.rapper {
+    font-size: 3rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: hipHopDance 0.6s infinite alternate steps(2);
+}
+
+.rapper .head {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: headBob 0.3s infinite alternate;
+}
+
+.rapper .torso {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rapper .left-arm {
+    position: absolute;
+    top: 75px;
+    left: 20px;
+    animation: leftArmWave 0.3s infinite alternate;
+}
+
+.rapper .right-arm {
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    animation: rightArmWave 0.4s infinite alternate-reverse;
+}
+
+.rapper .legs {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* الظل تحت الراقص */
+.stage-shadow {
+    width: 120px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shadowScale 0.6s infinite alternate;
+}
+
+/* ================= Animations (الأنيميشنز الفاجرة) ================= */
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #66fcf1; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #45f3ff; }
+}
+
+/* رقصة الراب */
+@keyframes hipHopDance {
+    0% { transform: translateY(0) skewX(-5deg); }
+    100% { transform: translateY(-10px) skewX(5deg); }
+}
+
+@keyframes headBob {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(5px); }
+}
+
+@keyframes leftArmWave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-40deg); }
+}
+
+@keyframes rightArmWave {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(40deg); }
+}
+
+@keyframes shadowScale {
+    0% { width: 120px; opacity: 0.6; }
+    100% { width: 100px; opacity: 0.3; }
+}
+
+/* ------------ الحدث الثاني (الراب الفاجر) ------------ */
+.rap-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #fff;
+    text-shadow: 0 0 15px #66fcf1;
+
+}
+
+.rap-character-container {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* جسم الرابر الرئيسي وحركة الـ Bounce مع المزيكا */
+.rapper-body {
+    position: relative;
+    width: 120px;
+    height: 260px;
+    animation: rapBounce 0.5s infinite alternate ease-in-out;
+}
+
+/* الرأس */
+.rap-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #ffdbac; /* لون بشرة */
+    border-radius: 50%;
+    z-index: 3;
+    animation: headNod 0.5s infinite alternate ease-in-out;
+}
+
+/* كاب الراب مقلوب على جنب */
+.cap {
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    width: 55px;
+    height: 25px;
+    background: #ff0055;
+    border-radius: 20px 20px 0 0;
+    transform: rotate(-10deg);
+}
+.cap::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+    width: 25px;
+    height: 6px;
+    background: #cc0044;
+    border-radius: 0 5px 5px 0;
+}
+
+/* الجذع / السويت شيرت الـ Oversized */
+.rap-torso {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 100px;
+    background: #1f2833;
+    border: 2px solid #66fcf1;
+    border-radius: 15px 15px 5px 5px;
+    z-index: 2;
+}
+
+/* اليدين */
+.rap-arm {
+    position: absolute;
+    width: 20px;
+    height: 70px;
+    background: #1f2833;
+    border: 2px solid #66fcf1;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+}
+
+/* الإيد الشمال بتتحرك فوق وتحت بتعمل Wave */
+.rap-arm.left {
+    left: -15px;
+    top: 10px;
+    transform-origin: top center;
+    animation: leftArmRap 0.5s infinite alternate ease-in-out;
+}
+
+/* الإيد اليمين ماسكة المايك وبتتحرك عند بقه */
+.rap-arm.right {
+    right: -15px;
+    top: 10px;
+    transform-origin: top center;
+    animation: rightArmMic 0.25s infinite alternate ease-in-out;
+}
+
+/* المايك */
+.mic {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 25px;
+    background: #333;
+    border-radius: 3px;
+}
+.mic::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -2px;
+    width: 16px;
+    height: 12px;
+    background: #888;
+    border-radius: 50%;
+}
+
+/* البنطلون الواسع */
+.rap-legs {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+.leg {
+    position: absolute;
+    width: 30px;
+    height: 90px;
+    background: #45f3ff;
+    border-radius: 5px;
+}
+
+/* حركة الرجل الشمال */
+.leg.left-leg {
+    left: 20px;
+    transform-origin: top center;
+    animation: leftLegMove 0.5s infinite alternate ease-in-out;
+}
+
+/* حركة الرجل اليمين */
+.leg.right-leg {
+    right: 20px;
+    transform-origin: top center;
+    animation: rightLegMove 0.5s infinite alternate-reverse ease-in-out;
+}
+
+/* الكوتشي الإير جوردان */
+.leg::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 40px;
+    height: 15px;
+    background: #fff;
+    border-top: 5px solid #ff0055;
+    border-radius: 5px 10px 2px 2px;
+}
+.leg.left-leg::after { left: -10px; transform: scaleX(-1); }
+.leg.right-leg::after { right: -10px; }
+
+/* الظل تحت الشخصية بيتفاعل مع النطة */
+.stage-shadow {
+    width: 140px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shadowPulse 0.5s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+/* ================= الـ Animations الفاجرة الجديدة ================= */
+
+/* نطة الجسم كله مع الـ Beat */
+@keyframes rapBounce {
+    0% { transform: translateY(0) scaleY(1); }
+    100% { transform: translateY(-25px) scaleY(0.95); }
+}
+
+/* هز الرأس وعمل Nodding */
+@keyframes headNod {
+    0% { transform: translateX(-50%) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(10deg) translateY(5px); }
+}
+
+/* حركة الإيد الشمال بـ Style الراب الأصلي */
+@keyframes leftArmRap {
+    0% { transform: rotate(20deg); }
+    100% { transform: rotate(-80deg) translateY(-10px); }
+}
+
+/* حركة إيد المايك سريعة عند الوش */
+@keyframes rightArmMic {
+    0% { transform: rotate(-40deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+/* حركات الرجلين عشان تبان خطق خطوات رقص */
+@keyframes leftLegMove {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(15deg); }
+}
+
+@keyframes rightLegMove {
+    0% { transform: rotate(10deg) scaleY(1); }
+    100% { transform: rotate(-10deg) scaleY(0.9); }
+}
+
+/* انكماش وتمدد الظل مع نطة الرابر */
+@keyframes shadowPulse {
+    0% { width: 140px; opacity: 0.7; }
+    100% { width: 100px; opacity: 0.3; transform: translateX(-50%) scale(0.8); }
+}
